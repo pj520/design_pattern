@@ -9,7 +9,7 @@
 
 - [抽象工厂模式] (Abstract Factory Pattern)
     
-[抽象工厂模式]:(./abstract_factory_pattern/)
+[抽象工厂模式]:/abstract_factory_pattern/
 
 - 单例模式(Singleton Pattern)
 - 建造者模式(Builder Pattern)
