@@ -12,6 +12,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/prototype_pattern)
 
 # 结构型
 add_subdirectory(${PROJECT_SOURCE_DIR}/adapter_pattern)
+add_subdirectory(${PROJECT_SOURCE_DIR}/filter_criteria_pattern)
 add_subdirectory(${PROJECT_SOURCE_DIR}/bridge_pattern)
 add_subdirectory(${PROJECT_SOURCE_DIR}/composite_pattern)
 add_subdirectory(${PROJECT_SOURCE_DIR}/decorator_pattern)

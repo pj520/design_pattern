@@ -25,4 +25,4 @@
 ### 注意事项
     产品族难扩展，产品等级易扩展。
     
-![工厂模式](../img/abstractfactory_pattern_uml_diagram.jpg)
+![抽象工厂模式](../img/abstractfactory_pattern_uml_diagram.jpg)

@@ -35,7 +35,7 @@
 
 [适配器模式]:/adapter_pattern/
 [桥接模式]:/bridge_pattern/
-[过滤器模式]://
+[过滤器模式]:/filter_criteria_pattern/
 [组合模式]:/composite_pattern/
 [装饰器模式]:/decorator_pattern/
 [外观模式]:/facade_pattern/
