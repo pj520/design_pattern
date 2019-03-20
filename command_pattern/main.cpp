@@ -2,82 +2,73 @@
 #include <vector>
 
 // 烤肉师傅.
-class roast_cook
-{
+class roast_cook {
 public:
-    void make_mutton()
-    {
+    void make_mutton() {
         std::cout << "make mutton" << std::endl;
     }
 
-    void make_chickenwing()
-    {
+    void make_chickenwing() {
         std::cout << "make chickenwing" << std::endl;
     }
 };
 
 // 抽象命令类.
-class command
-{
+class command {
 public:
-    command(roast_cook* cook) : _roast_cook(cook) {}
+    command(roast_cook *cook) : _roast_cook(cook) {}
+
     virtual ~command() {}
+
     virtual void execute() = 0;
 
 protected:
-    roast_cook* _roast_cook;
+    roast_cook *_roast_cook;
 };
 
 // 烤羊肉命令.
-class make_mutton_command : public command
-{
+class make_mutton_command : public command {
 public:
-    make_mutton_command(roast_cook* cook) : command(cook) {}
-    virtual void execute()
-    {
+    make_mutton_command(roast_cook *cook) : command(cook) {}
+
+    virtual void execute() {
         _roast_cook->make_mutton();
     }
 };
 
 // 烤鸡翅命令.
-class make_chickenwing_command : public command
-{
+class make_chickenwing_command : public command {
 public:
-    make_chickenwing_command(roast_cook* cook) : command(cook) {}
-    virtual void execute()
-    {
+    make_chickenwing_command(roast_cook *cook) : command(cook) {}
+
+    virtual void execute() {
         _roast_cook->make_chickenwing();
     }
 };
 
 // 服务员类.
-class waiter
-{
+class waiter {
 public:
-    void set_command(command* cmd)
-    {
+    void set_command(command *cmd) {
         std::cout << "set command" << std::endl;
         _command_vec.emplace_back(cmd);
     }
 
-    void notify()
-    {
-        for (auto& cmd : _command_vec)
-        {
+    void notify() {
+        for (auto &cmd : _command_vec) {
             cmd->execute();
         }
     }
 
 private:
-    std::vector<command*> _command_vec;
+    std::vector<command *> _command_vec;
 };
 
-int main()
-{
-    roast_cook* cook = new roast_cook();
-    command* cmd1 = new make_mutton_command(cook);
-    command* cmd2 = new make_chickenwing_command(cook);
-    waiter* girl = new waiter();
+int main() {
+    roast_cook *cook = new roast_cook();
+    command *cmd1 = new make_mutton_command(cook);
+    command *cmd2 = new make_chickenwing_command(cook);
+    waiter *girl = new waiter();
 
     // 点菜.
     girl->set_command(cmd1);

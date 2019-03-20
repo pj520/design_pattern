@@ -1,70 +1,58 @@
 #include <iostream>
 #include <vector>
 
-class tool
-{
+class tool {
 public:
     virtual ~tool() {}
 
-    virtual void draw() = 0; 
+    virtual void draw() = 0;
 };
 
-class pdf : public tool
-{
+class pdf : public tool {
 public:
-    virtual void draw()
-    {
+    virtual void draw() {
         std::cout << "pdf draw" << std::endl;
     }
 };
 
-class doc : public tool
-{
+class doc : public tool {
 public:
-    virtual void draw()
-    {
+    virtual void draw() {
         std::cout << "doc draw" << std::endl;
     }
 };
 
-class shape
-{
+class shape {
 public:
     virtual ~shape() {}
 
-    void pain()
-    {
-        _tool->draw();    
+    void pain() {
+        _tool->draw();
     }
 
-    tool* _tool;
+    tool *_tool;
 };
 
-class rectangle : public shape
-{
+class rectangle : public shape {
 public:
-    rectangle()
-    {
+    rectangle() {
         std::cout << "rectangle" << std::endl;
     }
 };
 
-class circle : public shape
-{
+class circle : public shape {
 public:
-    circle()
-    {
+    circle() {
         std::cout << "circle" << std::endl;
     }
 };
 
-int main()
-{
-    shape* s = new rectangle();
+int main() {
+    shape *s = new rectangle();
     s->_tool = new pdf();
     s->pain();
 
-    shape* s2 = new circle();
+    shape *s2 = new circle();
     s2->_tool = new doc();
     s2->pain();
 

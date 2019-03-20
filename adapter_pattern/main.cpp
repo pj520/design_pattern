@@ -1,46 +1,39 @@
 #include <iostream>
 
-class target
-{
+class target {
 public:
     virtual ~target() {}
+
     virtual void request() = 0;
 };
 
-class adaptee
-{
+class adaptee {
 public:
-    void specific_request()
-    {
+    void specific_request() {
         std::cout << "call specific_request" << std::endl;
     }
 };
 
-class adapter : public target
-{
+class adapter : public target {
 public:
-    adapter()
-    {
-        _adaptee = new adaptee(); 
+    adapter() {
+        _adaptee = new adaptee();
     }
 
-    ~adapter()
-    {
-        delete _adaptee; 
+    ~adapter() {
+        delete _adaptee;
     }
 
-    void request()
-    {
+    void request() {
         _adaptee->specific_request();
     }
 
 private:
-    adaptee* _adaptee;
+    adaptee *_adaptee;
 };
 
-int main()
-{
-    target* t = new adapter();
+int main() {
+    target *t = new adapter();
     t->request();
     delete t;
     return 0;
