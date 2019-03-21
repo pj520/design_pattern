@@ -66,7 +66,7 @@
 [备忘录模式]:/memento_pattern/
 [观察者模式]:/observer_pattern/
 [状态模式]:/state_pattern/
-[空对象模式]://
+[空对象模式]:/null_object_pattern/
 [策略模式]:/strategy_pattern/
 [模板模式]:/template_method_pattern/
 [访问者模式]:/visitor_pattern/
